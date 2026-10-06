@@ -1,0 +1,141 @@
+3271  17:49:58.431264 execve("/tmp/lab2-build/parent", ["/tmp/lab2-build/parent", "/tmp/lab2-build/child"], 0xffffc38aee00 /* 5 vars */) = 0
+3271  17:49:58.431652 brk(NULL)         = 0xaaaad721d000
+3271  17:49:58.431717 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffb4c0c000
+3271  17:49:58.431775 faccessat(AT_FDCWD</>, "/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+3271  17:49:58.431860 openat(AT_FDCWD</>, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3</etc/ld.so.cache>
+3271  17:49:58.431922 fstat(3</etc/ld.so.cache>, {st_mode=S_IFREG|0644, st_size=7435, ...}) = 0
+3271  17:49:58.431996 mmap(NULL, 7435, PROT_READ, MAP_PRIVATE, 3</etc/ld.so.cache>, 0) = 0xffffb4c0a000
+3271  17:49:58.432051 close(3</etc/ld.so.cache>) = 0
+3271  17:49:58.432105 openat(AT_FDCWD</>, "/lib/aarch64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3</usr/lib/aarch64-linux-gnu/libc.so.6>
+3271  17:49:58.432162 read(3</usr/lib/aarch64-linux-gnu/libc.so.6>, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\360\206\2\0\0\0\0\0"..., 832) = 832
+3271  17:49:58.432231 fstat(3</usr/lib/aarch64-linux-gnu/libc.so.6>, {st_mode=S_IFREG|0755, st_size=1722920, ...}) = 0
+3271  17:49:58.432300 mmap(NULL, 1892240, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_DENYWRITE, -1, 0) = 0xffffb4a08000
+3271  17:49:58.432359 mmap(0xffffb4a10000, 1826704, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/aarch64-linux-gnu/libc.so.6>, 0) = 0xffffb4a10000
+3271  17:49:58.432435 munmap(0xffffb4a08000, 32768) = 0
+3271  17:49:58.432503 munmap(0xffffb4bce000, 32656) = 0
+3271  17:49:58.432561 mprotect(0xffffb4baa000, 77824, PROT_NONE) = 0
+3271  17:49:58.432613 mmap(0xffffb4bbd000, 20480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/aarch64-linux-gnu/libc.so.6>, 0x19d000) = 0xffffb4bbd000
+3271  17:49:58.432669 mmap(0xffffb4bc2000, 49040, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xffffb4bc2000
+3271  17:49:58.432724 close(3</usr/lib/aarch64-linux-gnu/libc.so.6>) = 0
+3271  17:49:58.432781 set_tid_address(0xffffb4c0cfb0) = 3271
+3271  17:49:58.432832 set_robust_list(0xffffb4c0cfc0, 24) = 0
+3271  17:49:58.432881 rseq(0xffffb4c0d600, 0x20, 0, 0xd428bc00) = 0
+3271  17:49:58.432942 mprotect(0xffffb4bbd000, 12288, PROT_READ) = 0
+3271  17:49:58.432998 mprotect(0xaaaacdb5f000, 4096, PROT_READ) = 0
+3271  17:49:58.433051 mprotect(0xffffb4c14000, 8192, PROT_READ) = 0
+3271  17:49:58.433106 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+3271  17:49:58.433160 munmap(0xffffb4c0a000, 7435) = 0
+3271  17:49:58.433217 rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_INTERRUPT|SA_NODEFER|SA_RESETHAND|0xffffffff00000000}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+3271  17:49:58.433297 fcntl(0<pipe:[3892]>, F_GETFD) = 0
+3271  17:49:58.433362 fcntl(1<pipe:[3893]>, F_GETFD) = 0
+3271  17:49:58.433425 fcntl(2<pipe:[3894]>, F_GETFD) = 0
+3271  17:49:58.433520 getpid()          = 3271
+3271  17:49:58.433581 write(2<pipe:[3894]>, "[parent pid=3271] Enter output f"..., 40) = 40
+3271  17:49:58.433647 getrandom("\xbd\x92\xee\xe9\x81\xc2\x31\x83", 8, GRND_NONBLOCK) = 8
+3271  17:49:58.433702 brk(NULL)         = 0xaaaad721d000
+3271  17:49:58.433753 brk(0xaaaad723e000) = 0xaaaad723e000
+3271  17:49:58.433809 fstat(0<pipe:[3892]>, {st_mode=S_IFIFO|0600, st_size=0, ...}) = 0
+3271  17:49:58.433865 read(0<pipe:[3892]>, "/tmp/lab2-results.txt\n100 2 5\n9 "..., 4096) = 38
+3271  17:49:58.433919 pipe2([3<pipe:[8689]>, 4<pipe:[8689]>], 0) = 0
+3271  17:49:58.433976 pipe2([5<pipe:[8690]>, 6<pipe:[8690]>], 0) = 0
+3271  17:49:58.434037 clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0xffffb4c0cfb0) = 3272
+3271  17:49:58.434146 getpid( <unfinished ...>
+3272  17:49:58.434167 set_robust_list(0xffffb4c0cfc0, 24 <unfinished ...>
+3271  17:49:58.434188 <... getpid resumed>) = 3271
+3272  17:49:58.434210 <... set_robust_list resumed>) = 0
+3271  17:49:58.434237 write(2<pipe:[3894]>, "[parent pid=3271] created child="..., 37 <unfinished ...>
+3272  17:49:58.434278 dup3(3<pipe:[8689]>, 0<pipe:[3892]>, 0 <unfinished ...>
+3271  17:49:58.434321 <... write resumed>) = 37
+3272  17:49:58.434353 <... dup3 resumed>) = 0<pipe:[8689]>
+3271  17:49:58.434380 close(3<pipe:[8689]> <unfinished ...>
+3272  17:49:58.434409 dup3(6<pipe:[8690]>, 1<pipe:[3893]>, 0 <unfinished ...>
+3271  17:49:58.434452 <... close resumed>) = 0
+3272  17:49:58.434481 <... dup3 resumed>) = 1<pipe:[8690]>
+3271  17:49:58.434508 close(6<pipe:[8690]> <unfinished ...>
+3272  17:49:58.434531 close(3<pipe:[8689]> <unfinished ...>
+3271  17:49:58.434555 <... close resumed>) = 0
+3272  17:49:58.434575 <... close resumed>) = 0
+3271  17:49:58.434594 read(5<pipe:[8690]>,  <unfinished ...>
+3272  17:49:58.434617 close(5<pipe:[8690]>) = 0
+3272  17:49:58.434676 close(4<pipe:[8689]>) = 0
+3272  17:49:58.434730 close(6<pipe:[8690]>) = 0
+3272  17:49:58.434782 execve("/tmp/lab2-build/child", ["child", "/tmp/lab2-results.txt"], 0xffffdd2fb3c0 /* 5 vars */) = 0
+3272  17:49:58.434889 brk(NULL)         = 0xaaaae1b60000
+3272  17:49:58.434947 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffaa72a000
+3272  17:49:58.435001 faccessat(AT_FDCWD</>, "/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+3272  17:49:58.435057 openat(AT_FDCWD</>, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3</etc/ld.so.cache>
+3272  17:49:58.435114 fstat(3</etc/ld.so.cache>, {st_mode=S_IFREG|0644, st_size=7435, ...}) = 0
+3272  17:49:58.435168 mmap(NULL, 7435, PROT_READ, MAP_PRIVATE, 3</etc/ld.so.cache>, 0) = 0xffffaa728000
+3272  17:49:58.435221 close(3</etc/ld.so.cache>) = 0
+3272  17:49:58.435285 openat(AT_FDCWD</>, "/lib/aarch64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3</usr/lib/aarch64-linux-gnu/libc.so.6>
+3272  17:49:58.435344 read(3</usr/lib/aarch64-linux-gnu/libc.so.6>, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\360\206\2\0\0\0\0\0"..., 832) = 832
+3272  17:49:58.435405 fstat(3</usr/lib/aarch64-linux-gnu/libc.so.6>, {st_mode=S_IFREG|0755, st_size=1722920, ...}) = 0
+3272  17:49:58.435473 mmap(NULL, 1892240, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_DENYWRITE, -1, 0) = 0xffffaa526000
+3272  17:49:58.435553 mmap(0xffffaa530000, 1826704, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/aarch64-linux-gnu/libc.so.6>, 0) = 0xffffaa530000
+3272  17:49:58.435630 munmap(0xffffaa526000, 40960) = 0
+3272  17:49:58.435698 munmap(0xffffaa6ee000, 24464) = 0
+3272  17:49:58.435764 mprotect(0xffffaa6ca000, 77824, PROT_NONE) = 0
+3272  17:49:58.435831 mmap(0xffffaa6dd000, 20480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/aarch64-linux-gnu/libc.so.6>, 0x19d000) = 0xffffaa6dd000
+3272  17:49:58.435902 mmap(0xffffaa6e2000, 49040, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xffffaa6e2000
+3272  17:49:58.435972 close(3</usr/lib/aarch64-linux-gnu/libc.so.6>) = 0
+3272  17:49:58.436044 set_tid_address(0xffffaa72afb0) = 3272
+3272  17:49:58.436109 set_robust_list(0xffffaa72afc0, 24) = 0
+3272  17:49:58.436172 rseq(0xffffaa72b600, 0x20, 0, 0xd428bc00) = 0
+3272  17:49:58.436257 mprotect(0xffffaa6dd000, 12288, PROT_READ) = 0
+3272  17:49:58.436349 mprotect(0xaaaad55ff000, 4096, PROT_READ) = 0
+3272  17:49:58.436423 mprotect(0xffffaa732000, 8192, PROT_READ) = 0
+3272  17:49:58.436497 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+3272  17:49:58.436555 munmap(0xffffaa728000, 7435) = 0
+3272  17:49:58.436613 rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_INTERRUPT|SA_NODEFER|SA_RESETHAND|0xffffffff00000000}, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=0}, 8) = 0
+3272  17:49:58.436667 openat(AT_FDCWD</>, "/tmp/lab2-results.txt", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 3</tmp/lab2-results.txt>
+3272  17:49:58.436737 getpid()          = 3272
+3272  17:49:58.436793 write(2<pipe:[3894]>, "[child pid=3272] output=/tmp/lab"..., 46) = 46
+3272  17:49:58.436856 write(1<pipe:[8690]>, "R", 1) = 1
+3271  17:49:58.436914 <... read resumed>"R", 1) = 1
+3272  17:49:58.436938 getrandom( <unfinished ...>
+3271  17:49:58.436961 getpid( <unfinished ...>
+3272  17:49:58.436985 <... getrandom resumed>"\x04\x14\xc5\x28\xd0\x0a\x1e\xbf", 8, GRND_NONBLOCK) = 8
+3271  17:49:58.437013 <... getpid resumed>) = 3271
+3272  17:49:58.437040 brk(NULL <unfinished ...>
+3271  17:49:58.437068 write(2<pipe:[3894]>, "[parent pid=3271] child READY; e"..., 46 <unfinished ...>
+3272  17:49:58.437097 <... brk resumed>) = 0xaaaae1b60000
+3271  17:49:58.437129 <... write resumed>) = 46
+3272  17:49:58.437147 brk(0xaaaae1b81000 <unfinished ...>
+3271  17:49:58.437167 write(4<pipe:[8689]>, "100 2 5\n", 8 <unfinished ...>
+3272  17:49:58.437190 <... brk resumed>) = 0xaaaae1b81000
+3271  17:49:58.437210 <... write resumed>) = 8
+3272  17:49:58.437230 fstat(0<pipe:[8689]>,  <unfinished ...>
+3271  17:49:58.437261 read(5<pipe:[8690]>,  <unfinished ...>
+3272  17:49:58.437289 <... fstat resumed>{st_mode=S_IFIFO|0600, st_size=0, ...}) = 0
+3272  17:49:58.437339 read(0<pipe:[8689]>, "100 2 5\n", 4096) = 8
+3272  17:49:58.437394 write(3</tmp/lab2-results.txt>, "10\n", 3) = 3
+3272  17:49:58.437462 getpid()          = 3272
+3272  17:49:58.437546 write(2<pipe:[3894]>, "[child pid=3272] line=1: result="..., 35) = 35
+3272  17:49:58.437641 write(1<pipe:[8690]>, "O", 1) = 1
+3271  17:49:58.437705 <... read resumed>"O", 1) = 1
+3272  17:49:58.437727 read(0<pipe:[8689]>,  <unfinished ...>
+3271  17:49:58.437750 write(4<pipe:[8689]>, "9 0\n", 4) = 4
+3272  17:49:58.437821 <... read resumed>"9 0\n", 4096) = 4
+3271  17:49:58.437845 read(5<pipe:[8690]>,  <unfinished ...>
+3272  17:49:58.437871 getpid()          = 3272
+3272  17:49:58.437940 write(2<pipe:[3894]>, "[child pid=3272] line=2: divisio"..., 42) = 42
+3272  17:49:58.437999 write(1<pipe:[8690]>, "Z", 1 <unfinished ...>
+3271  17:49:58.438033 <... read resumed>"Z", 1) = 1
+3272  17:49:58.438054 <... write resumed>) = 1
+3271  17:49:58.438075 close(5<pipe:[8690]> <unfinished ...>
+3272  17:49:58.438095 close(3</tmp/lab2-results.txt> <unfinished ...>
+3271  17:49:58.438117 <... close resumed>) = 0
+3272  17:49:58.438142 <... close resumed>) = 0
+3271  17:49:58.438167 close(4<pipe:[8689]> <unfinished ...>
+3272  17:49:58.438189 exit_group(2 <unfinished ...>
+3271  17:49:58.438210 <... close resumed>) = 0
+3272  17:49:58.438238 <... exit_group resumed>) = ?
+3271  17:49:58.438261 wait4(3272,  <unfinished ...>
+3272  17:49:58.438286 +++ exited with 2 +++
+3271  17:49:58.438306 <... wait4 resumed>[{WIFEXITED(s) && WEXITSTATUS(s) == 2}], 0, NULL) = 3272
+3271  17:49:58.438340 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=3272, si_uid=0, si_status=2, si_utime=0, si_stime=0} ---
+3271  17:49:58.438376 getpid()          = 3271
+3271  17:49:58.438447 write(2<pipe:[3894]>, "[parent pid=3271] waitpid reaped"..., 51) = 51
+3271  17:49:58.438516 lseek(0<pipe:[3892]>, -4, SEEK_CUR) = -1 ESPIPE (Illegal seek)
+3271  17:49:58.438569 exit_group(2)     = ?
+3271  17:49:58.438649 +++ exited with 2 +++

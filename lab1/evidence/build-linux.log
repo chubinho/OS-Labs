@@ -1,0 +1,5 @@
+make: Entering directory '/lab'
+mkdir -p /tmp/lab2-build
+gcc -D_POSIX_C_SOURCE=200809L -Isrc -std=c11 -O2 -g -Wall -Wextra -Wpedantic -Werror src/parent.c src/common.c  -o /tmp/lab2-build/parent
+gcc -D_POSIX_C_SOURCE=200809L -Isrc -std=c11 -O2 -g -Wall -Wextra -Wpedantic -Werror src/child.c src/common.c  -o /tmp/lab2-build/child
+make: Leaving directory '/lab'

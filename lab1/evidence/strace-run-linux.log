@@ -1,0 +1,18 @@
+Input:
+/tmp/lab2-results.txt
+100 2 5
+9 0
+8 2
+
+STDERR:
+[parent pid=3271] Enter output filename
+[parent pid=3271] created child=3272
+[child pid=3272] output=/tmp/lab2-results.txt
+[parent pid=3271] child READY; enter commands
+[child pid=3272] line=1: result=10
+[child pid=3272] line=2: division by zero
+[parent pid=3271] waitpid reaped child=3272 exit=2
+
+Exit status: 2
+Output file:
+10

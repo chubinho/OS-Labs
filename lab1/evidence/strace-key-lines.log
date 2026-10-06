@@ -1,0 +1,17 @@
+3271  17:49:58.431264 execve("/tmp/lab2-build/parent", ["/tmp/lab2-build/parent", "/tmp/lab2-build/child"], 0xffffc38aee00 /* 5 vars */) = 0
+3271  17:49:58.433865 read(0<pipe:[3892]>, "/tmp/lab2-results.txt\n100 2 5\n9 "..., 4096) = 38
+3271  17:49:58.433919 pipe2([3<pipe:[8689]>, 4<pipe:[8689]>], 0) = 0
+3271  17:49:58.433976 pipe2([5<pipe:[8690]>, 6<pipe:[8690]>], 0) = 0
+3271  17:49:58.434037 clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0xffffb4c0cfb0) = 3272
+3272  17:49:58.434278 dup3(3<pipe:[8689]>, 0<pipe:[3892]>, 0 <unfinished ...>
+3272  17:49:58.434353 <... dup3 resumed>) = 0<pipe:[8689]>
+3272  17:49:58.434409 dup3(6<pipe:[8690]>, 1<pipe:[3893]>, 0 <unfinished ...>
+3272  17:49:58.434481 <... dup3 resumed>) = 1<pipe:[8690]>
+3272  17:49:58.434782 execve("/tmp/lab2-build/child", ["child", "/tmp/lab2-results.txt"], 0xffffdd2fb3c0 /* 5 vars */) = 0
+3272  17:49:58.436667 openat(AT_FDCWD</>, "/tmp/lab2-results.txt", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 3</tmp/lab2-results.txt>
+3272  17:49:58.437394 write(3</tmp/lab2-results.txt>, "10\n", 3) = 3
+3272  17:49:58.438095 close(3</tmp/lab2-results.txt> <unfinished ...>
+3272  17:49:58.438189 exit_group(2 <unfinished ...>
+3271  17:49:58.438261 wait4(3272,  <unfinished ...>
+3271  17:49:58.438306 <... wait4 resumed>[{WIFEXITED(s) && WEXITSTATUS(s) == 2}], 0, NULL) = 3272
+3271  17:49:58.438569 exit_group(2)     = ?

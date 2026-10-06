@@ -1,0 +1,19 @@
+Input:
+/Users/andrey/.codex/.chatgpt-projects/g-p-6ad5d9cc60248191be8cb3c0bf6004c0/work/report-template-2026-11-01/invalid-result.txt
+12x 2
+-2147483648 -1
+8 2
+
+STDERR:
+[parent pid=94733] Enter output filename
+[parent pid=94733] created child=94734
+[child pid=94734] output=/Users/andrey/.codex/.chatgpt-projects/g-p-6ad5d9cc60248191be8cb3c0bf6004c0/work/report-template-2026-11-01/invalid-result.txt
+[parent pid=94733] child READY; enter commands
+[child pid=94734] line=1: command rejected
+[child pid=94734] line=2: command rejected
+[child pid=94734] line=3: result=4
+[parent pid=94733] waitpid reaped child=94734 exit=0
+
+Exit status: 0
+Output file:
+4
