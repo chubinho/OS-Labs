@@ -1,0 +1,9 @@
+OS: Darwin 27.0.0
+Architecture: arm64
+Online logical CPUs: 10
+Build: C11, -O2, POSIX pthreads
+Seed: 42; 1 warmup/configuration; 5 timed repeats/configuration
+Configuration order shuffled each repeat; median used
+CLOCK_MONOTONIC: parallel_sort only (includes create/join/mutex)
+Generation, allocation, verification, checksum and output excluded
+--verbose and --hold disabled; no CPU affinity set

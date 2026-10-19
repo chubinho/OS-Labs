@@ -1,0 +1,10 @@
+$ ./build/mergesort -n 100000 -t 4 --verbose --hold 3
+PID=44468 TID=2295581 main live=1
+PID=44468 TID=2295582 start live=2
+PID=44468 TID=2295583 start live=3
+PID=44468 TID=2295584 start live=4
+PID=44468 TID=2295583 finish live=4
+PID=44468 TID=2295584 finish live=3
+PID=44468 TID=2295582 finish live=2
+PID=44468 n=100000 limit=4 peak=4
+seconds=3.006682000 sorted=OK checksum=8645112016494273649

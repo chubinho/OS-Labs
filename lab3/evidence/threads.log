@@ -1,0 +1,7 @@
+$ ps -M -p 44468 -o pid,stat,comm
+USER     PID   TT   %CPU STAT PRI     STIME     UTIME COMMAND   PID STAT COMM
+<user> 44468   ??    0.0 S    31T   0:00.00   0:00.00 ./build 44468 S    ./build/mergesort
+       44468         0.0 S    31T   0:00.00   0:00.00         44468 S    
+       44468         0.0 S    31T   0:00.00   0:00.00         44468 S    
+       44468         0.0 S    31T   0:00.00   0:00.00         44468 S    
+Observed OS threads: 4 (including main)

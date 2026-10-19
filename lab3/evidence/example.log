@@ -1,0 +1,4 @@
+$ ./build/mergesort -t 3 -i evidence/input.txt --print
+PID=45238 n=7 limit=3 peak=1
+seconds=0.000000000 sorted=OK checksum=2028860911806365721
+ARRAY: -2147483648 -3 0 7 7 9 2147483647
