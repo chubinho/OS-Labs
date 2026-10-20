@@ -28,18 +28,23 @@ static int parse_unsigned(const char *text, unsigned long long maximum,
     return 0;
 }
 
-static void usage(void)
+static int usage(void)
 {
-    puts("Usage: mergesort -t THREADS (-n COUNT | -i FILE) [options]\n"
-         "  -t THREADS      maximum live threads INCLUDING main (1..256)\n"
-         "  -n COUNT        generate COUNT integers (0 is allowed)\n"
-         "  -i FILE         read whitespace-separated integers until EOF\n"
-         "  -s SEED         deterministic generator seed (0..4294967295)\n"
-         "  --kind KIND     random, sorted, reverse, equal (default random)\n"
-         "  --verbose       print PID, native TID and live counter\n"
-         "  --print         print full sorted array after timing\n"
-         "  --hold SECONDS  hold leaf threads for OS inspection (0..60)\n"
-         "  --help          show this help");
+    if (puts("Usage: mergesort -t THREADS (-n COUNT | -i FILE) [options]\n"
+             "  -t THREADS      maximum live threads INCLUDING main (1..256)\n"
+             "  -n COUNT        generate COUNT integers (0 is allowed)\n"
+             "  -i FILE         read whitespace-separated integers until EOF\n"
+             "  -s SEED         deterministic generator seed (0..4294967295)\n"
+             "  --kind KIND     random, sorted, reverse, equal (default random)\n"
+             "  --verbose       print PID, native TID and live counter\n"
+             "  --print         print full sorted array after timing\n"
+             "  --hold SECONDS  hold leaf threads for OS inspection (0..60)\n"
+             "  --help          show this help") == EOF ||
+        fflush(stdout) == EOF) {
+        perror("stdout");
+        return -1;
+    }
+    return 0;
 }
 
 int parse_options(int argc, char **argv, struct options *options)
@@ -52,8 +57,7 @@ int parse_options(int argc, char **argv, struct options *options)
     for (int i = 1; i < argc; ++i) {
         const char *key = argv[i];
         if (strcmp(key, "--help") == 0) {
-            usage();
-            return 1;
+            return usage() == 0 ? 1 : -1;
         }
         if (strcmp(key, "--verbose") == 0) {
             options->verbose = 1;
