@@ -1,6 +1,7 @@
 #include "common.h"
 
 #include <errno.h>
+#include <fcntl.h>
 #include <limits.h>
 #include <poll.h>
 #include <stdint.h>
@@ -122,6 +123,20 @@ static int read_line(char **line, size_t *length)
     return -1;
 }
 
+static int resize_mapping(int fd, off_t size)
+{
+    if (ftruncate(fd, size) == -1) {
+        perror("ftruncate mapping");
+        return -1;
+    }
+    int error = posix_fallocate(fd, 0, size);
+    if (error != 0) {
+        fprintf(stderr, "posix_fallocate mapping: %s\n", strerror(error));
+        return -1;
+    }
+    return 0;
+}
+
 static int send_line(int fd, const char *line, size_t length)
 {
     if (length > (size_t)LLONG_MAX - sizeof(struct message) - 1 ||
@@ -130,8 +145,7 @@ static int send_line(int fd, const char *line, size_t length)
         return -1;
     }
     size_t size = sizeof(struct message) + length + 1;
-    if (ftruncate(fd, (off_t)size) == -1) {
-        perror("ftruncate message");
+    if (resize_mapping(fd, (off_t)size) == -1) {
         return -1;
     }
     struct message *message = mmap(NULL, size, PROT_READ | PROT_WRITE,
@@ -187,8 +201,7 @@ int main(int argc, char **argv)
         goto cleanup;
     }
     named_file = 0;
-    if (ftruncate(fd, sizeof(*header)) == -1) {
-        perror("ftruncate header");
+    if (resize_mapping(fd, sizeof(*header)) == -1) {
         goto cleanup;
     }
     header = mmap(NULL, sizeof(*header), PROT_READ | PROT_WRITE,

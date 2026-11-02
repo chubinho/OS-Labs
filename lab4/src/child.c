@@ -64,9 +64,21 @@ int main(int argc, char **argv)
         perror("mmap header");
         goto cleanup;
     }
-    output = open(argv[1], O_WRONLY | O_CREAT | O_TRUNC, 0666);
+    output = open(argv[1], O_WRONLY | O_CREAT | O_NONBLOCK, 0666);
     if (output == -1) {
         perror("open output");
+        goto cleanup;
+    }
+    if (fstat(output, &file_info) == -1) {
+        perror("fstat output");
+        goto cleanup;
+    }
+    if (!S_ISREG(file_info.st_mode)) {
+        fprintf(stderr, "Output must be a regular file\n");
+        goto cleanup;
+    }
+    if (ftruncate(output, 0) == -1) {
+        perror("ftruncate output");
         goto cleanup;
     }
     fprintf(stderr, "[child PID=%ld] ready\n", (long)getpid());
